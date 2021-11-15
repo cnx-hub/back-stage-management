@@ -1,0 +1,14 @@
+{
+  "useTabs": false,
+  "tabWidth": 2,
+  "printWidth": 80,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "semi": false,
+  "@useTabs": "使用tab缩进还是空格缩进",
+  "@tabWidth": "tab是空格的情况下，是几个空格",
+  "@printWidth": "tab是空格的情况下，是几个空格",
+  "@singleQuote": "使用单引号还是双引号",
+  "@trailingComma": "在多行输入的尾逗号是否添加，",
+  "@semi": "使用tab缩进还语句末尾是否要加分号，默认值true，是空格缩进"
+}

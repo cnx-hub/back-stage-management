@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    // 目标代码  (js -> js(es6/es7/es8))
+    "target": "esnext",
+    // 目标模块化  (commentjs require/module.exports  es module import/export)
+    "module": "esnext",
+    // 开启严格模式
+    "strict": true,
+    // 对jsx 代码进行转化
+    "jsx": "preserve",
+    // 辅助的导入功能
+    "importHelpers": true,
+    // 按照node模式解析模块
+    "moduleResolution": "node",
+    // 跳过对一些第三方库的类型检测
+    // 手动引入第三方库类型
+    "skipLibCheck": true,
+    // export default/module.exports={}
+    // es module 和 commentjs  混和使用
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // 要不要生成映射文件
+    "sourceMap": true,
+    // 文件解析时，基本的url
+    "baseUrl": ".",
+    // 指定具有要解析使用的类型
+    "types": ["webpack-env"],
+    // 路径解析 (编译阶段)类似于webpack的alis(别名)
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    // 项目中可以使用哪些库的类型
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  // 哪些代码需要解析
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  // 排除哪些代码需要解析
+  "exclude": ["node_modules"]
+}
