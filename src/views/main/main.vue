@@ -41,6 +41,7 @@
 	.main-content,
 	.page {
 		height: 100%;
+
 		.page-header {
 			background-color: #242f41;
 		}
@@ -48,6 +49,7 @@
 
 	.page-content {
 		height: calc(100% -48px);
+		padding-top: 35px;
 		.page-info {
 			background-color: #fff;
 			border-radius: 5px;

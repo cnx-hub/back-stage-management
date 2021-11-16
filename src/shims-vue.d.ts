@@ -11,3 +11,5 @@ interface Fn {
 declare let $filters: Fn
 
 declare module '*.json'
+
+declare module 'lodash.clonedeep'

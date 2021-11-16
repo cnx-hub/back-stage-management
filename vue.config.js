@@ -37,5 +37,15 @@ module.exports = {
     plugins: [
       require('unplugin-vue-components/webpack')({ /* options */ }),
     ],
+    // wangEditor打包
+    module: {
+      rules: [
+        {
+          test: /\.mjs$/,
+          include: /node_modules/,
+          type: "javascript/auto"
+        },
+      ],
+    },
   },
 }
