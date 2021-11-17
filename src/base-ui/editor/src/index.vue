@@ -1,9 +1,13 @@
 <template>
-	<div
-		ref="editorRef"
-		class="hy-editor"
-		:style="{ width: width ? `${width}px` : '100%' }"
-	></div>
+	<div>
+		<input type="text" placeholder="请输入标题" v-model.lazy="content.title" />
+		<div
+			ref="editorRef"
+			class="hy-editor"
+			:style="{ width: width ? `${width}px` : '100%' }"
+		></div>
+		<el-button type="primary" @click="handleClick">提交</el-button>
+	</div>
 </template>
 
 <script lang="ts" setup>
@@ -22,11 +26,13 @@
 	export interface EditorInfo {
 		html: string
 		text: string
+		title: string
 	}
 	const props = withDefaults(
 		defineProps<{
 			// 数据双向绑定
 			value: string
+			title: string
 			zIndex?: number
 			height?: number
 			width?: number
@@ -34,6 +40,7 @@
 		}>(),
 		{
 			value: '',
+			title: '',
 			zIndex: 500,
 			height: 500,
 			width: 0,
@@ -42,6 +49,8 @@
 	)
 	const emits = defineEmits<{
 		(e: 'update:value', value: string): void
+		(e: 'update:title', value: string): void
+		(e: 'handleClick'): void
 	}>()
 
 	const editorRef = ref<HTMLDivElement | null>(null)
@@ -49,7 +58,8 @@
 	const isInitContent = ref<boolean>(false)
 	const content = reactive<EditorInfo>({
 		html: '',
-		text: ''
+		text: '',
+		title: ''
 	})
 	// WangEditor实例
 	const instance = ref<Editor | null>(null)
@@ -58,6 +68,12 @@
 		() => props.value,
 		() => {
 			initEditorContent(props.value, true)
+		}
+	)
+	watch(
+		() => content.title,
+		() => {
+			emits('update:title', content.title)
 		}
 	)
 
@@ -138,6 +154,11 @@
 			'undo',
 			'redo'
 		]
+	}
+
+	// 方法
+	const handleClick = () => {
+		emits('handleClick')
 	}
 </script>
 

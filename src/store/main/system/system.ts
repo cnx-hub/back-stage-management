@@ -90,7 +90,6 @@ const userModule: Module<IsystemState, IRootState> = {
       // 1.拼接请求地址以及参数
       const pageName = payload.pageName
       const pageUrl = `/${pageName}/list`
-      console.log(pageUrl)
 
       // 2.对页面发送请求
       const pageResult = await getPageListData(pageUrl, payload.queryInfo)

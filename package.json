@@ -19,6 +19,7 @@
     "echarts": "^5.2.2",
     "element-plus": "^1.1.0-beta.24",
     "element-ui": "^2.15.6",
+    "highlight.js": "^11.3.1",
     "lodash": "^4.17.21",
     "router": "^2.0.0-beta.1",
     "vue": "^3.2.21",

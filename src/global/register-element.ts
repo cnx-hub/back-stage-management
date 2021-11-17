@@ -37,7 +37,10 @@ import {
   ElDialog,
   ElTree,
   ElCard,
-  ElTooltip
+  ElTooltip,
+  ElDescriptions,
+  ElDescriptionsItem,
+  ElTag
 } from 'element-plus'
 import 'element-plus/dist/index.css'
 
@@ -79,7 +82,11 @@ const components = [
   ElDialog,
   ElTree,
   ElCard,
-  ElTooltip
+  ElTooltip,
+  ElLink,
+  ElDescriptions,
+  ElDescriptionsItem,
+  ElTag
 ]
 
 export default function (app: App): void {

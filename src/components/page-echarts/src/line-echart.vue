@@ -8,7 +8,6 @@
 	import baseEchart from '@/base-ui/echart'
 	import { computed, defineProps, withDefaults } from 'vue'
 	import { EChartsOption } from 'echarts'
-	import { IDataType } from '../type'
 
 	const props = withDefaults(
 		defineProps<{
