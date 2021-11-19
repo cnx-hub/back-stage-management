@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  outputDir: "./build",
+  // outputDir: "./build",
   publicPath: '/',
   devServer: {
     proxy: {
