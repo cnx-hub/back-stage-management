@@ -1,4 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {
+  createRouter,
+  createWebHistory,
+  createWebHashHistory
+} from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 
 import cache from '@/utils/cache'
@@ -27,7 +31,7 @@ const routes: RouteRecordRaw[] = [
 
 const router = createRouter({
   routes,
-  history: createWebHistory()
+  history: createWebHashHistory()
 })
 
 router.beforeEach((to) => {
