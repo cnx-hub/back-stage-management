@@ -47,7 +47,8 @@
 			title: item.name,
 			value: item.id
 		}))
-		const roleItem = modalConfig.formItems.find(
+		
+    const roleItem = modalConfig.formItems.find(
 			(item: any) => item.field === 'roleId'
 		)
 		roleItem.options = store.state.entireRole.map((item) => ({

@@ -1,7 +1,12 @@
 <template>
 	<div
 		class="statistical"
-		:class="{ style1: index == 1, style2: index == 2, style3: index == 3 }"
+		:class="{
+			style0: index === 0,
+			style1: index == 1,
+			style2: index == 2,
+			style3: index == 3
+		}"
 	>
 		<div class="main">
 			<span class="title">{{ panelData.subtitle }} </span>&nbsp;
@@ -66,6 +71,10 @@
 				font-size: 14px;
 			}
 		}
+	}
+	.style0 {
+		background: url(../../../assets/img/1.png) no-repeat !important;
+		background-size: cover !important;
 	}
 	.style1 {
 		background: url(../../../assets/img/2.png) no-repeat !important;

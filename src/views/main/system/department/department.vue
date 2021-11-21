@@ -49,8 +49,9 @@
 			(item) => item.field === 'parentId'
 		)
 		parentIdItem!.options = store.state.enterDepartment.map((item) => {
-			return { label: item.name, value: item.id }
+			return { title: item.name, value: item.id }
 		})
+		console.log(parentIdItem)
 		return modalConfig
 	})
 </script>
