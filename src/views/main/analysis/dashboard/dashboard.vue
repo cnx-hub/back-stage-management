@@ -2,9 +2,12 @@
 	<div class="dashboard">
 		<!-- 1.顶部统计数据 -->
 		<el-row :gutter="10">
-			<template v-for="item in topPanelData" :key="item.title">
+			<template v-for="(item, index) in topPanelData" :key="item.title">
 				<el-col :md="12" :lg="6" :xl="6">
-					<statistical-panel :panelData="item"></statistical-panel>
+					<statistical-panel
+						:panelData="item"
+						:index="index"
+					></statistical-panel>
 				</el-col>
 			</template>
 		</el-row>

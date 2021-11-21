@@ -16,7 +16,12 @@
 
 	const options = computed<echarts.EChartsOption>(() => ({
 		title: {
-			text: '支持鼠标滚动缩放'
+			text: '支持鼠标滚动缩放',
+			textStyle: {
+				// fontStyle: 'normal',
+				fontWeight: 400,
+				fontSize: 14
+			}
 		},
 		grid: {
 			bottom: '5%'

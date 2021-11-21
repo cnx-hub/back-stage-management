@@ -2,7 +2,7 @@
 	<div>
 		<hy-form v-bind="props.searchFormConfig" v-model="formData">
 			<template #header>
-				<h2 class="header">高级检索</h2>
+				<!-- <h2 class="header">高级检索</h2> -->
 			</template>
 			<template #footer>
 				<div class="footer">
@@ -55,9 +55,6 @@
 
 
 <style scoped>
-	.header {
-		color: red;
-	}
 	.footer {
 		text-align: right;
 		padding: 0 20px 20px 0;

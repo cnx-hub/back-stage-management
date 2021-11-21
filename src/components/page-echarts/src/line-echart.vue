@@ -62,11 +62,20 @@
 				type: 'line',
 				stack: 'Total',
 				smooth: true,
-				areaStyle: {},
+				// areaStyle: {},  图片下面的阴影面积
 				emphasis: {
 					focus: 'series'
 				},
-				data: props.values
+				data: props.values,
+				itemStyle: {
+					borderWidth: 4,
+					borderColor: '#EE6666',
+					color: '#eaba54'
+				},
+				lineStyle: {
+					color: '#5470C6',
+					borderWidth: 5
+				}
 			}
 		]
 	}))

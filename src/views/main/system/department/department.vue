@@ -10,6 +10,7 @@
 			:contentTableConfig="contentTableConfig"
 			pageName="department"
 			ref="pageContentRef"
+			title="新建部门"
 			@newBtnClick="handleNewData"
 			@editBtnClick="handleEditData"
 		></page-content>

@@ -15,7 +15,7 @@
 	import { IDescriptionProp } from '../types'
 	withDefaults(
 		defineProps<{
-			title: string
+			title?: string
 			column: number
 			tableDatas: Array<IDescriptionProp>
 		}>(),

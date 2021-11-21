@@ -23,5 +23,6 @@ export const searchFormConfig: IForm = {
         type: 'daterange'
       }
     }
-  ]
+  ],
+  colLayout: { span: 8 }
 }

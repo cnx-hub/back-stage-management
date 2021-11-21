@@ -2,6 +2,7 @@
 	<div class="menu">
 		<page-content
 			:contentTableConfig="contentTableConfig"
+			title="新建菜单"
 			pageName="menu"
 		></page-content>
 	</div>

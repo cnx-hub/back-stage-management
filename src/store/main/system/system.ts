@@ -70,6 +70,14 @@ const userModule: Module<IsystemState, IRootState> = {
     },
     changeStoryTotalCount(state, totalCount: number) {
       state.storyTotalCount = totalCount
+    },
+    changeUserEnable(state, list: any) {
+      const userList = state.usersList.find((item: any) => item.id === list.id)
+      if (userList.enable === 0) {
+        state.usersList.find((item: any) => item.id === list.id).enable = 1
+      } else if (userList.enable === 1) {
+        state.usersList.find((item: any) => item.id === list.id).enable = 0
+      }
     }
   },
   getters: {

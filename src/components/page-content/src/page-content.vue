@@ -9,9 +9,9 @@
 		>
 			<!-- 1.header中的插槽 -->
 			<template #headerHandler v-if="isCreate">
-				<el-button type="primary" size="medium" @click="handleNewClick"
-					>新建用户</el-button
-				>
+				<el-button type="primary" size="medium" @click="handleNewClick">{{
+					title
+				}}</el-button>
 			</template>
 			<!-- 2.列中的插槽 -->
 			<template #status="scope">
@@ -19,6 +19,7 @@
 					:type="scope.row.enable ? 'success' : 'danger'"
 					size="mini"
 					:plain="true"
+					@click="handleClick(scope.row)"
 				>
 					{{ scope.row.enable ? '启用' : '禁用' }}</el-button
 				>
@@ -81,10 +82,11 @@
 	import { usePermission } from '@/hooks/usePermission'
 	// 1.获取props中的数据
 	const props = withDefaults(
-		defineProps<{ contentTableConfig: any; pageName: string }>(),
+		defineProps<{ contentTableConfig: any; pageName: string; title: string }>(),
 		{
 			contentTableConfig: () => ({}),
-			pageName: ''
+			pageName: '',
+			title: ''
 		}
 	)
 
@@ -104,7 +106,7 @@
 	const isQuery = usePermission(props.pageName, 'query')
 
 	// 发送网路请求
-	console.log(isQuery)
+	// console.log(isQuery)
 
 	const getPageData = (queryInfo: any = {}) => {
 		if (props.pageName !== 'story') {
@@ -136,7 +138,8 @@
 		if (item.slotName === 'status') return false
 		if (item.slotName) return true
 	})
-	// 5.删除/编辑/新建操作
+	// 5.处理状态
+	// 6.删除/编辑/新建操作
 	const handleDeleteClick = (item: any) => {
 		alert(`确定删除用户${item.name}`)
 		store.dispatch('system/deletePageDataAction', {
@@ -150,6 +153,12 @@
 	}
 	const handleNewClick = () => {
 		emits('newBtnClick')
+	}
+
+	const handleClick = (item: any) => {
+		console.log(1)
+
+		store.commit('system/changeUserEnable', item)
 	}
 	// 暴露属性/方法
 	defineExpose({

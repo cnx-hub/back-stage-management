@@ -1,6 +1,10 @@
 <template>
 	<div class="goods">
-		<page-content :contentTableConfig="contentTableConfig" pageName="goods">
+		<page-content
+			:contentTableConfig="contentTableConfig"
+			pageName="goods"
+			title="新建商品"
+		>
 			<template #image="scope">
 				<el-image
 					style="width: 80px; height: 80px"

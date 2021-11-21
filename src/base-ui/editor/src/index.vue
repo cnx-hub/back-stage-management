@@ -1,12 +1,18 @@
 <template>
 	<div>
-		<input type="text" placeholder="请输入标题" v-model.lazy="content.title" />
+		<div class="header">
+			<el-input
+				type="text"
+				placeholder="请输入标题"
+				v-model.lazy="content.title"
+			/>
+			<el-button type="primary" @click="handleClick">提交</el-button>
+		</div>
 		<div
 			ref="editorRef"
 			class="hy-editor"
 			:style="{ width: width ? `${width}px` : '100%' }"
 		></div>
-		<el-button type="primary" @click="handleClick">提交</el-button>
 	</div>
 </template>
 
@@ -163,6 +169,11 @@
 </script>
 
 <style lang="less" scoped>
+	.header {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 10px;
+	}
 	.hy-editor {
 		text-align: left;
 	}

@@ -1,21 +1,10 @@
 <template>
-	<div class="statistical">
-		<div class="header">
-			<span>{{ panelData.title }}</span>
-			<el-tooltip :content="panelData.tips" placement="top" effect="light">
-				<el-icon><warning /></el-icon>
-			</el-tooltip>
-		</div>
-		<div class="content">
-			<count-up
-				:number="panelData.number1"
-				:option="
-					panelData.amount === 'saleroom' ? counterOption2 : counterOption1
-				"
-			></count-up>
-		</div>
-		<div class="footer">
-			<span>{{ panelData.subtitle }} </span>&nbsp;
+	<div
+		class="statistical"
+		:class="{ style1: index == 1, style2: index == 2, style3: index == 3 }"
+	>
+		<div class="main">
+			<span class="title">{{ panelData.subtitle }} </span>&nbsp;
 			<count-up
 				:number="panelData.number2"
 				:option="
@@ -27,7 +16,6 @@
 </template>
 
 <script lang="ts" setup>
-	import { Warning } from '@element-plus/icons'
 	import { defineProps } from 'vue'
 	import type { IpanelData } from '../type'
 
@@ -35,6 +23,7 @@
 
 	defineProps<{
 		panelData: IpanelData
+		index: number
 	}>()
 
 	const counterOption1 = {
@@ -48,8 +37,9 @@
 </script>
 
 <style scoped lang="less">
-	@h: 38px;
 	.statistical {
+		background: url(../../../assets/img/1.png) no-repeat !important;
+		background-size: cover !important;
 		display: flex;
 		padding: 0 20px;
 		background: white;
@@ -61,35 +51,32 @@
 		margin-bottom: 20px;
 		overflow: hidden;
 		text-align: left;
-		.header {
+
+		.main {
 			display: flex;
-			height: @h;
-			font-size: 14px;
-			color: rgba(0, 0, 0, 0.45);
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: flex-end;
-		}
-		.content {
-			display: flex;
-			margin-left: 0px;
-			font-size: 26px;
-			color: rgba(0, 0, 0, 0.85);
-			flex: 1;
+			height: 100%;
+			font-size: 25px;
+			letter-spacing: 1px;
+			color: #fdfefd;
+			border-top: 1px solid #f0f0f0;
 			flex-direction: column;
 			justify-content: center;
 			align-items: flex-start;
+			.title {
+				font-size: 14px;
+			}
 		}
-		.footer {
-			display: flex;
-			height: @h;
-			font-size: 14px;
-			letter-spacing: 1px;
-			color: rgba(0, 0, 0, 0.85);
-			border-top: 1px solid #f0f0f0;
-			flex-direction: row;
-			justify-content: flex-start;
-			align-items: center;
-		}
+	}
+	.style1 {
+		background: url(../../../assets/img/2.png) no-repeat !important;
+		background-size: cover !important;
+	}
+	.style2 {
+		background: url(../../../assets/img/3.png) no-repeat !important;
+		background-size: cover !important;
+	}
+	.style3 {
+		background: url(../../../assets/img/4.png) no-repeat !important;
+		background-size: cover !important;
 	}
 </style>

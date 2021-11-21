@@ -21,7 +21,6 @@
 			language: props.language
 		}).value
 	})
-	console.log(1)
 </script>
 
 <style lang="less" scoped>

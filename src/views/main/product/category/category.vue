@@ -1,5 +1,11 @@
 <template>
 	<div class="category">
+		<el-row :gutter="10">
+			<el-col :span="24">
+				<nx-card title="分类商品数量(饼图)"></nx-card>
+			</el-col>
+		</el-row>
+
 		<page-search
 			:searchFormConfig="searchFormConfig"
 			@resetBtnClick="handleResetBtnClick"
@@ -8,6 +14,7 @@
 
 		<page-content
 			ref="pageContentRef"
+			title="新建类别"
 			:contentTableConfig="contentTableConfig"
 			pageName="category"
 			@newBtnClick="handleNewData"
@@ -27,6 +34,7 @@
 	import pageSearch from '@/components/page-search'
 	import pageContent from '@/components/page-content'
 	import pageModal from '@/components/page-modal'
+	import nxCard from '@/base-ui/card'
 
 	import { searchFormConfig } from './config/search.config'
 	import { contentTableConfig } from './config/content.config'
