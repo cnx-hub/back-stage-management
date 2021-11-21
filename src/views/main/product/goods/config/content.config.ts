@@ -4,7 +4,6 @@ export const contentTableConfig = {
     { prop: 'oldPrice', label: '原价格', minWidth: '80' },
     { prop: 'newPrice', label: '新价格', minWidth: '80' },
     { prop: 'desc', label: '商品描述', minWidth: '100' },
-    { prop: 'enable', label: '状态', minWidth: '80', slotName: 'status' },
     { prop: 'imgUrl', label: '图片', minWidth: '100', slotName: 'image' },
     { prop: 'inventoryCount', label: '库存', minWidth: '80' },
     { prop: 'saleCount', label: '销量', minWidth: '80' },

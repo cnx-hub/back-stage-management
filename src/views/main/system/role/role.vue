@@ -1,11 +1,19 @@
 <template>
 	<div class="role">
-		<page-search
-			:searchFormConfig="searchFormConfig"
-			@resetBtnClick="handleResetBtnClick"
-			@queryBtnClick="handleQueryBtnClick"
-		></page-search>
-
+		<el-row>
+			<el-col :span="24">
+				<nx-card title="角色等级关系图">
+					<topology-echart></topology-echart>
+				</nx-card>
+			</el-col>
+		</el-row>
+		<div class="search">
+			<page-search
+				:searchFormConfig="searchFormConfig"
+				@resetBtnClick="handleResetBtnClick"
+				@queryBtnClick="handleQueryBtnClick"
+			></page-search>
+		</div>
 		<page-content
 			:contentTableConfig="contentTableConfig"
 			@newBtnClick="handleNewData"
@@ -44,6 +52,8 @@
 	import pageSearch from '@/components/page-search'
 	import pageContent from '@/components/page-content'
 	import pageModal from '@/components/page-modal'
+	import nxCard from '@/base-ui/card'
+	import topologyEchart from '@/components/page-echarts/src/topology-echart.vue'
 
 	import { searchFormConfig } from './config/search.config'
 	import { contentTableConfig } from './config/content.config'
@@ -79,5 +89,8 @@
 <style scoped>
 	.menu-tree {
 		margin-left: 25px;
+	}
+	.search {
+		border-top: 20px solid #f5f5f5;
 	}
 </style>

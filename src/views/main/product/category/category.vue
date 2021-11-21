@@ -2,15 +2,19 @@
 	<div class="category">
 		<el-row :gutter="10">
 			<el-col :span="24">
-				<nx-card title="分类商品数量(饼图)"></nx-card>
+				<nx-card title="商品占比分析">
+					<ring-echart></ring-echart>
+				</nx-card>
 			</el-col>
 		</el-row>
 
-		<page-search
-			:searchFormConfig="searchFormConfig"
-			@resetBtnClick="handleResetBtnClick"
-			@queryBtnClick="handleQueryBtnClick"
-		></page-search>
+		<div class="search">
+			<page-search
+				:searchFormConfig="searchFormConfig"
+				@resetBtnClick="handleResetBtnClick"
+				@queryBtnClick="handleQueryBtnClick"
+			></page-search>
+		</div>
 
 		<page-content
 			ref="pageContentRef"
@@ -35,6 +39,7 @@
 	import pageContent from '@/components/page-content'
 	import pageModal from '@/components/page-modal'
 	import nxCard from '@/base-ui/card'
+	import ringEchart from '@/components/page-echarts/src/ring-echart.vue'
 
 	import { searchFormConfig } from './config/search.config'
 	import { contentTableConfig } from './config/content.config'
@@ -49,4 +54,8 @@
 	const [pageModalRef, defaulInfo, handleNewData, handleEditData] = usePageModal()
 </script>
 
-<style scoped></style>
+<style scoped>
+	.search {
+		border-top: 20px solid #f5f5f5;
+	}
+</style>
