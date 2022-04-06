@@ -6,7 +6,12 @@ export const contentTableConfig = {
     { prop: 'url', label: '菜单url', minWidth: '100' },
     { prop: 'icon', label: '菜单icon', minWidth: '100' },
     { prop: 'permission', label: '按钮权限', minWidth: '100' },
-    { prop: 'createAt', label: '创建时间', minWidth: '220' },
+    {
+      prop: 'createAt',
+      label: '创建时间',
+      minWidth: '220',
+      slotName: 'createAt'
+    },
     {
       prop: 'updateAt',
       label: '更新时间',

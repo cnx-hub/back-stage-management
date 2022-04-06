@@ -103,7 +103,6 @@ const userModule: Module<IsystemState, IRootState> = {
       const pageResult = await getPageListData(pageUrl, payload.queryInfo)
       // 3.将数据保存在state中
       const { list, totalCount } = pageResult.data
-      console.log(pageResult.data)
 
       switch (pageName) {
         case 'users':
